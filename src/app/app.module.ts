@@ -1,9 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { MovieDetailComponent } from './movie/movie-detail/movie-detail.component';
 import { MovieListComponent } from './movie/movie-list/movie-list.component';
+import { FormsModule } from '@angular/forms';
+import {SelectModule} from 'ng2-select';
+
+const appRoutes: Routes = [
+  { path: '', children: [
+    { path: '', component: MovieListComponent },
+    { path: 'movie', component: MovieListComponent },
+    { path: 'movie/:id', component: MovieDetailComponent },
+
+  ]},
+];
 
 @NgModule({
   declarations: [
@@ -12,7 +25,11 @@ import { MovieListComponent } from './movie/movie-list/movie-list.component';
     MovieListComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes, { enableTracing: false }),
+    FormsModule,
+    SelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
