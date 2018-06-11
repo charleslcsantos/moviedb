@@ -1,0 +1,27 @@
+.card {
+	display: block;
+	color: #333;
+	margin-bottom: 20px;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+	border-radius: 5px;
+	overflow: hidden;
+	&:hover {
+		color: #333;
+		text-decoration: none;
+	}
+}
+.card__pic {
+	width: 100%;
+}
+.card__header {
+	background: #FFF;
+	padding: 15px;
+}
+.card__title {
+	font-size: 1em;
+	line-height: 1.1em;
+	font-weight: bold;
+}
+.card__content {
+	display: none;
+}

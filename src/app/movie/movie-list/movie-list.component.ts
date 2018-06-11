@@ -20,7 +20,7 @@ export class MovieListComponent implements OnInit {
   private value: any = ['Athens'];
   private _disabledV = '0';
   private disabled = false;
-  public response;
+  public response = {};
 
   private get disabledV(): string {
     return this._disabledV;
