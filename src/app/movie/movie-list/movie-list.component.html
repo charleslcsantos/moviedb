@@ -1,21 +1,10 @@
-<section class="container-fluid">
-  <h1>Discover New Movies</h1>
+<section class="container-fluid section section-movie-list">
+  <h1 class="section__title">Discover New Movies</h1>
   <div class="list movies">
     <div class="list__filter">
-      <div>
-        <h3>Select multiple cities</h3>
-        <ng-select  [multiple]="true"
-                    [items]="items"
-                    [disabled]="disabled"
-                    (data)="refreshValue($event)"
-                    (selected)="selected($event)"
-                    (removed)="removed($event)"
-                    placeholder="No city selected"></ng-select>
-        <pre>{{ itemsToString(value) }}</pre>
-      </div>
     </div>
-    <a href="#" class="card movie" title="{{movie.title}}" *ngFor="let movie of response.results">
-      <img
+    <a [routerLink]="['movie', movie.id]" class="card movie" title="{{movie.title}}" *ngFor="let movie of response.results">
+      <img alt="{{movie.title}}"
           srcset="https://image.tmdb.org/t/p/w300{{movie.backdrop_path}} 800w,
                   https://image.tmdb.org/t/p/w185{{movie.poster_path}} 1000w"
           src="https://image.tmdb.org/t/p/w185{{movie.poster_path}}"
@@ -24,7 +13,7 @@
         <div class="movie__average">{{ movie.vote_average }}</div>
         <div class="card__title">
           {{ movie.title }}
-          <div class="movie__release-date">{{ movie.release_date }}</div>
+          <div class="movie__release-date">{{ movie.release_date | amDateFormat:'D [de] MMMM [de] YYYY' }}</div>
         </div>
       </div>
       <p class="card__content">

@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { MomentModule } from 'ngx-moment';
 
 import { AppComponent } from './app.component';
 import { MovieDetailComponent } from './movie/movie-detail/movie-detail.component';
@@ -30,6 +31,7 @@ const appRoutes: Routes = [
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes, { enableTracing: false }),
+    MomentModule,
     FormsModule,
     SelectModule
   ],
