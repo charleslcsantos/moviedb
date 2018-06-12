@@ -1,3 +1,6 @@
+@import '../mixins/responsive';
+@import '../variables';
+
 .card {
 	display: block;
 	color: #333;
@@ -5,9 +8,11 @@
 	border-radius: 5px;
 	margin-bottom: 30px;
 	overflow: hidden;
+	transition: transform .1s;
 	&:hover {
 		color: #333;
 		text-decoration: none;
+		transform: scale(1.01);
 	}
 }
 .card__pic {
@@ -24,4 +29,8 @@
 }
 .card__content {
 	padding: 15px;
+	@include min-tablet-size {
+		font-size: .82em;
+		overflow: hidden;
+	}
 }

@@ -2,16 +2,35 @@
 @import '../../../assets/scss/variables';
 
 .card.movie {
+	@include min-tablet-size {
+		width: 480px;
+		display: inline-block;
+		margin: 0 15px 30px;
+		background: #FFF;
+	}
+	.card__pic {
+		@include min-tablet-size {
+			width: 190px;
+			float: left;
+		}
+	}
+	.card__header {
+		display: flex;
+		@include min-tablet-size {
+			width: calc(100% - 190px);
+			float: right;
+		}
+	}
+	.card__title {
+		padding-left: 10px;
+	}
 	.card__content {
 		display: none;
-		@include min-desktop-size {
+		@include min-tablet-size {
 			display: block;
 		}
 	}
-}
-.card__header {
-	display: flex;
-}
-.card__title {
-	padding-left: 10px;
+	.card__footer {
+		overflow: hidden;
+	}
 }

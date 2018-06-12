@@ -1,11 +1,18 @@
+@import '../mixins/responsive';
+@import '../variables';
+
 .pagination {
   font-size: .85em;
   text-align: center;
+  @include min-tablet-size {
+    display: block;
+    margin: 20px 0;
+  }
   p {
     margin: 0;
   }
   .btn {
-    margin: 10px 0;
+    margin: 10px 5px;
   }
 }
 .pagination__results {

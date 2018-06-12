@@ -1,4 +1,4 @@
-<section class="container-fluid section section-movie-list">
+<section class="container section section-movie-list">
   <h1 class="section__title">Discover New Movies</h1>
   <div class="list movies">
     <div class="list__filter">
@@ -9,17 +9,19 @@
                   https://image.tmdb.org/t/p/w185{{movie.poster_path}} 1000w"
           src="https://image.tmdb.org/t/p/w185{{movie.poster_path}}"
           class="card__pic"/>
-      <div class="card__header">
-        <div class="movie__average">{{ movie.vote_average }}</div>
-        <div class="card__title">
-          {{ movie.title }}
-          <div class="movie__release-date">{{ movie.release_date | amDateFormat:'D [de] MMMM [de] YYYY' }}</div>
+        <div class="card__header">
+            <div class="movie__average">{{ movie.vote_average }}</div>
+            <div class="card__title">
+              {{ movie.title }}
+              <div class="movie__release-date">{{ movie.release_date | amDateFormat:'LL' }}</div>
+            </div>
+          </div>
+          <p class="card__content">
+            {{ movie.overview | slice:0:180 }}{{ movie.overview.length > 180 ? '...' : '' }}
+          </p>
+        <div class="card__footer">
+          <a href="#" class="btn">More Info</a>
         </div>
-      </div>
-      <p class="card__content">
-        {{ movie.overview }}
-      </p>
-      <div class="card__footer"></div>
     </a>
     <div class="pagination">
       <p class="pagination__page">Currently on page: <strong>{{ response.page }}</strong> of <strong>{{ response.total_pages }}</strong></p>
