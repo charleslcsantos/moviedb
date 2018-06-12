@@ -9,6 +9,7 @@
                   https://image.tmdb.org/t/p/w185{{movie.poster_path}} 1000w"
           src="https://image.tmdb.org/t/p/w185{{movie.poster_path}}"
           class="card__pic"/>
+      <div class="card__wrapper">
         <div class="card__header">
             <div class="movie__average">{{ movie.vote_average }}</div>
             <div class="card__title">
@@ -22,6 +23,7 @@
         <div class="card__footer">
           <a href="#" class="btn">More Info</a>
         </div>
+      </div>
     </a>
     <div class="pagination">
       <p class="pagination__page">Currently on page: <strong>{{ response.page }}</strong> of <strong>{{ response.total_pages }}</strong></p>

@@ -4,6 +4,7 @@
 .card.movie {
 	@include min-tablet-size {
 		width: 480px;
+		height: 285px;
 		display: inline-block;
 		margin: 0 15px 30px;
 		background: #FFF;
@@ -11,15 +12,19 @@
 	.card__pic {
 		@include min-tablet-size {
 			width: 190px;
-			float: left;
+			vertical-align: top;
+		}
+	}
+	.card__wrapper {
+		@include min-tablet-size {
+			width: calc(100% - 190px);
+			height: 100%;
+			display: inline-block;
+			vertical-align: top;
 		}
 	}
 	.card__header {
 		display: flex;
-		@include min-tablet-size {
-			width: calc(100% - 190px);
-			float: right;
-		}
 	}
 	.card__title {
 		padding-left: 10px;
@@ -32,5 +37,10 @@
 	}
 	.card__footer {
 		overflow: hidden;
+		@include min-tablet-size {
+			width: 100%;
+			border-top: 1px solid #e1e1e1;
+			padding: 10px;
+		}
 	}
 }

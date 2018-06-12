@@ -8,12 +8,13 @@
 	border-radius: 5px;
 	margin-bottom: 30px;
 	overflow: hidden;
-	transition: transform .1s;
 	&:hover {
 		color: #333;
 		text-decoration: none;
-		transform: scale(1.01);
 	}
+}
+.card__wrapper {
+	position: relative;
 }
 .card__pic {
 	width: 100%;
@@ -32,5 +33,13 @@
 	@include min-tablet-size {
 		font-size: .82em;
 		overflow: hidden;
+	}
+}
+.card__footer {
+	display: none;
+	@include min-tablet-size {
+		display: initial;
+		position: absolute;
+		bottom: 0;
 	}
 }
