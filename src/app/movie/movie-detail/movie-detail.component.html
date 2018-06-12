@@ -1,14 +1,18 @@
-<section class="container-fluid section section-movie-detail">
+<section class="section section-movie-detail">
   <div class="movie" *ngIf="movie">
-    <img class="movie__poster"/>
+    <img class="movie__poster" src="https://image.tmdb.org/t/p/w300{{movie.backdrop_path}}"/>
     
     <div class="movie__header">
-      <div class="movie__cover"></div>
-      <h1 class="movie__title">{{ movie.title }} <em>({{ movie.release_date | amDateFormat:'YYYY' }})</em></h1>
+      <div class="container-fluid">
+        <img class="movie__cover" src="https://image.tmdb.org/t/p/w92{{movie.poster_path}}"/>
+        <h1 class="movie__title">{{ movie.title }} <em>({{ movie.release_date | amDateFormat:'YYYY' }})</em></h1>
+      </div>
     </div>
     <div class="movie__header">
-      <div class="movie__average">{{ movie.vote_average }}</div>
-      <button class="movie__trailer-preview">Reproduzir Trailer</button>
+      <div class="container-fluid">
+        <div class="movie__average">{{ movie.vote_average }}</div>
+        <button class="btn">Reproduzir Trailer</button>
+      </div>
     </div>
 
     <div class="movie__overview">

@@ -9,7 +9,7 @@ import { MovieDetailComponent } from './movie/movie-detail/movie-detail.componen
 import { MovieListComponent } from './movie/movie-list/movie-list.component';
 import { FormsModule } from '@angular/forms';
 import { SelectModule } from 'ng2-select';
-import { MovieService } from './movie/movie.service';
+import { MovieService } from './movie/shared/movie.service';
 import { AuthInterceptor } from './http-interceptors/auth-interceptor';
 
 const appRoutes: Routes = [

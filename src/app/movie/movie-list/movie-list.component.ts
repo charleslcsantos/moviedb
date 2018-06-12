@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { MovieService } from '../movie.service';
+import { MovieService } from '../shared/movie.service';
+import { MovieFilter } from '../shared/MovieFilter.model';
 
 @Component({
   selector: 'app-movie-list',
@@ -25,9 +26,21 @@ export class MovieListComponent implements OnInit {
     });
   }
 
-  getMovies() {
-    this.movieService.getMovies().subscribe((res) => {
+  getMovies(filters?) {
+    this.movieService.getMovies(filters).subscribe((res) => {
       this.response = res;
+    });
+  }
+
+  previousPage() {
+    this.getMovies({
+      page: (this.response['page'] - 1)
+    });
+  }
+
+  nextPage() {
+    this.getMovies({
+      page: (this.response['page'] + 1)
     });
   }
 

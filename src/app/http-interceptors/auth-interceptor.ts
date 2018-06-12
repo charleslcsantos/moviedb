@@ -19,7 +19,9 @@ export class AuthInterceptor implements HttpInterceptor {
    * @param next
    */
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    const params = new HttpParams().set('api_key', API_TOKEN);
+    let params = new HttpParams();
+
+    params = req.params.append('api_key', API_TOKEN);
 
     const modifiedRequest = req.clone({
       params: params,
