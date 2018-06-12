@@ -1,26 +1,37 @@
 <section class="container-fluid section section-movie-detail">
-  <div class="movie">
+  <div class="movie" *ngIf="movie">
     <img class="movie__poster"/>
+    
     <div class="movie__header">
       <div class="movie__cover"></div>
-      <h1 class="movie__title">Deadpool 2 <em>(2018)</em></h1>
+      <h1 class="movie__title">{{ movie.title }} <em>({{ movie.release_date | amDateFormat:'YYYY' }})</em></h1>
     </div>
     <div class="movie__header">
-      <div class="movie__average">78</div>
+      <div class="movie__average">{{ movie.vote_average }}</div>
       <button class="movie__trailer-preview">Reproduzir Trailer</button>
     </div>
-    <div class="movie__sinopse">
-      <h2 class="sinopse__title">Sinopse</h2>
-      <p>O mercenário mutante Wade Wilson (Deadpool), reúne uma equipe de companheiros mutantes para proteger um jovem de habilidades sobrenaturais do mutante brutal, viajante no tempo, Cable.</p>
-      <h2 class="sinopse__title">Equipe técnica principal</h2>
-      <div class="movie__cast">
-        <div class="cast-member">
-          <span class="cast-member__name">Fabian</span>
-          <span class="cast-member__role">Characters</span>
+
+    <div class="movie__overview">
+      <h2 class="overview__title">Overview</h2>
+      <p>{{ movie.overview }}</p>
+      <h2 class="overview__title">Equipe técnica principal</h2>
+      <div class="featured-crew">
+        <div class="crew-member">
+          <span class="crew-member__name">Fabian</span>
+          <span class="crew-member__role">Characters</span>
         </div>
-        <div class="cast-member">
-          <span class="cast-member__name">Fabian</span>
-          <span class="cast-member__role">Characters</span>
+        <div class="crew-member">
+          <span class="crew-member__name">Fabian</span>
+          <span class="crew-member__role">Characters</span>
+        </div>
+      </div>
+      <div class="top-billed-cast">
+        <div class="card cast-member">
+          <div class="card__content">
+            <img class="cast-member__pic" />
+            <div class="cast-member__name">Chadwick Boseman</div>
+            <div class="cast-member__character">Black Panther</div>
+          </div>
         </div>
       </div>
     </div>

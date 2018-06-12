@@ -4,8 +4,6 @@ import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
-const API_URL = 'https://api.themoviedb.org/3';
-
 @Injectable()
 export class MovieService {
 
@@ -13,13 +11,17 @@ export class MovieService {
     private httpClient: HttpClient
   ) { }
 
-  public getMovie(filter?) {
-    return this.httpClient.get(`${API_URL}/discover/movie`);
+  public getMovies(filter?) {
+    return this.httpClient.get(`/discover/movie`);
+  }
+
+  public getMovieById(id) {
+    return this.httpClient.get(`/movie/${id}`);
   }
 
   public getGenre() {
     return this.httpClient
-          .get(`${API_URL}/genre/movie/list`)
+          .get(`/genre/movie/list`)
           .pipe(
             map((r) => {
               return r['genres'];

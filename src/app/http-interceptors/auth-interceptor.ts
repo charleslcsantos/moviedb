@@ -6,6 +6,7 @@ import {
 import { Observable } from 'rxjs';
 
 const API_TOKEN = 'e63cae93aadcec6c81f95190e32e5006';
+const API_URL = 'https://api.themoviedb.org/3';
 
 @Injectable({
   providedIn: 'root'
@@ -20,10 +21,11 @@ export class AuthInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const params = new HttpParams().set('api_key', API_TOKEN);
 
-    const requestWithToken = req.clone({
-      params: params
+    const modifiedRequest = req.clone({
+      params: params,
+      url: API_URL + req.url
     });
 
-    return next.handle(requestWithToken);
+    return next.handle(modifiedRequest);
   }
 }

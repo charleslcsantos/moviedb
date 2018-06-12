@@ -1,3 +1,14 @@
+@import '../../../assets/scss/mixins/responsive';
+@import '../../../assets/scss/variables';
+
+.card.movie {
+	.card__content {
+		display: none;
+		@include min-desktop-size {
+			display: block;
+		}
+	}
+}
 .card__header {
 	display: flex;
 }
