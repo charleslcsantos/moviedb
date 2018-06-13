@@ -4,6 +4,7 @@
 }
 .movie__header {
 	position: relative;
+	padding: 10px 0;
 }
 .movie__cover {
 	border-radius: 5px;
@@ -26,4 +27,22 @@
 }
 .movie__sub-header {
 	padding: 15px 0;
+}
+.movie__play-trailer {
+	display: inline-block;
+	border: none;
+	background: transparent;
+	color: inherit;
+	font-size: .95em;
+	position: relative;
+	margin-left: 20px;
+	padding-left: 20px;
+	&::before {
+		content: '';
+		height: 100%;
+		width: 1px;
+		background: #FFF;
+		position: absolute;
+		left: 0;
+	}
 }
