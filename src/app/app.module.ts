@@ -11,6 +11,8 @@ import { FormsModule } from '@angular/forms';
 import { SelectModule } from 'ng2-select';
 import { MovieService } from './movie/shared/movie.service';
 import { AuthInterceptor } from './http-interceptors/auth-interceptor';
+import { LoaderComponent } from './shared/loader/loader.component';
+import { MovieCardComponent } from './movie/movie-card/movie-card.component';
 
 const appRoutes: Routes = [
   { path: '', children: [
@@ -24,8 +26,10 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
+    LoaderComponent,
     MovieDetailComponent,
-    MovieListComponent
+    MovieListComponent,
+    MovieCardComponent
   ],
   imports: [
     BrowserModule,

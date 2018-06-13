@@ -30,14 +30,14 @@
 }
 .card__content {
 	padding: 15px;
-	@include min-tablet-size {
+	@include min-desktop-size {
 		font-size: .82em;
 		overflow: hidden;
 	}
 }
 .card__footer {
 	display: none;
-	@include min-tablet-size {
+	@include min-desktop-size {
 		display: initial;
 		position: absolute;
 		bottom: 0;

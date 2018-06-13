@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { MovieService } from '../shared/movie.service';
 import { MovieFilter } from '../shared/MovieFilter.model';
+import { LoaderService } from '../../shared/loader/loader.service';
 
 @Component({
   selector: 'app-movie-list',
@@ -12,7 +13,8 @@ export class MovieListComponent implements OnInit {
   public genres;
 
   constructor(
-    private movieService: MovieService
+    private movieService: MovieService,
+    private loaderService: LoaderService
   ) { }
 
   ngOnInit() {
@@ -27,8 +29,10 @@ export class MovieListComponent implements OnInit {
   }
 
   getMovies(filters?) {
+    this.loaderService.showLoader();
     this.movieService.getMovies(filters).subscribe((res) => {
       this.response = res;
+      setTimeout(() => this.loaderService.showLoader(false), 1500);
     });
   }
 

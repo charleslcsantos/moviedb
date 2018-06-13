@@ -3,28 +3,7 @@
   <div class="list movies">
     <div class="list__filter">
     </div>
-    <a [routerLink]="['movie', movie.id]" class="card movie" title="{{movie.title}}" *ngFor="let movie of response.results">
-      <img alt="{{movie.title}}"
-          srcset="https://image.tmdb.org/t/p/w300{{movie.backdrop_path}} 800w,
-                  https://image.tmdb.org/t/p/w185{{movie.poster_path}} 1000w"
-          src="https://image.tmdb.org/t/p/w185{{movie.poster_path}}"
-          class="card__pic"/>
-      <div class="card__wrapper">
-        <div class="card__header">
-            <div class="movie__average">{{ movie.vote_average }}</div>
-            <div class="card__title">
-              {{ movie.title }}
-              <div class="movie__release-date">{{ movie.release_date | amDateFormat:'LL' }}</div>
-            </div>
-          </div>
-          <p class="card__content">
-            {{ movie.overview | slice:0:180 }}{{ movie.overview.length > 180 ? '...' : '' }}
-          </p>
-        <div class="card__footer">
-          <a href="#" class="btn">More Info</a>
-        </div>
-      </div>
-    </a>
+    <app-movie-card *ngFor="let movie of response.results" [movie]="movie"></app-movie-card>
     <div class="pagination">
       <p class="pagination__page">Currently on page: <strong>{{ response.page }}</strong> of <strong>{{ response.total_pages }}</strong></p>
       <p class="pagination__results">({{ response.total_results }} results)</p>
