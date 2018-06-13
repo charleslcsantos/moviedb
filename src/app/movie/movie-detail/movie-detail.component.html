@@ -4,8 +4,10 @@
     
     <div class="movie__header">
       <div class="container">
-        <img class="movie__cover" src="https://image.tmdb.org/t/p/w92{{movie.poster_path}}"/>
-        <h1 class="movie__title">{{ movie.title }} <em class="movie__release">({{ movie.release_date | amDateFormat:'YYYY' }})</em></h1>
+        <div>
+            <img class="movie__cover" src="https://image.tmdb.org/t/p/w92{{movie.poster_path}}"/>
+            <h1 class="movie__title">{{ movie.title }} <em class="movie__release">({{ movie.release_date | amDateFormat:'YYYY' }})</em></h1>
+        </div>
       </div>
     </div>
     <div class="movie__sub-header">
@@ -16,25 +18,27 @@
     </div>
 
     <div class="movie__overview">
-      <h2 class="overview__title">Overview</h2>
-      <p>{{ movie.overview }}</p>
-      <h2 class="overview__title">Equipe técnica principal</h2>
-      <div class="featured-crew">
-        <div class="crew-member">
-          <span class="crew-member__name">Fabian</span>
-          <span class="crew-member__role">Characters</span>
+      <div class="container">
+        <h2 class="overview__title">Overview</h2>
+        <p>{{ movie.overview }}</p>
+        <h2 class="overview__title">Featured Crew</h2>
+        <div class="featured-crew">
+          <div class="crew-member">
+            <span class="crew-member__name">Fabian</span>
+            <span class="crew-member__role">Characters</span>
+          </div>
+          <div class="crew-member">
+            <span class="crew-member__name">Fabian</span>
+            <span class="crew-member__role">Characters</span>
+          </div>
         </div>
-        <div class="crew-member">
-          <span class="crew-member__name">Fabian</span>
-          <span class="crew-member__role">Characters</span>
-        </div>
-      </div>
-      <div class="top-billed-cast">
-        <div class="card cast-member">
-          <div class="card__content">
-            <img class="cast-member__pic" />
-            <div class="cast-member__name">Chadwick Boseman</div>
-            <div class="cast-member__character">Black Panther</div>
+        <div class="top-billed-cast">
+          <div class="card cast-member">
+            <div class="card__content">
+              <img class="cast-member__pic" />
+              <div class="cast-member__name">Chadwick Boseman</div>
+              <div class="cast-member__character">Black Panther</div>
+            </div>
           </div>
         </div>
       </div>
