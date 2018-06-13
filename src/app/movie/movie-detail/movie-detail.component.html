@@ -3,14 +3,14 @@
     <img class="movie__poster" src="https://image.tmdb.org/t/p/w300{{movie.backdrop_path}}"/>
     
     <div class="movie__header">
-      <div class="container-fluid">
+      <div class="container">
         <img class="movie__cover" src="https://image.tmdb.org/t/p/w92{{movie.poster_path}}"/>
-        <h1 class="movie__title">{{ movie.title }} <em>({{ movie.release_date | amDateFormat:'YYYY' }})</em></h1>
+        <h1 class="movie__title">{{ movie.title }} <em class="movie__release">({{ movie.release_date | amDateFormat:'YYYY' }})</em></h1>
       </div>
     </div>
-    <div class="movie__header">
-      <div class="container-fluid">
-        <div class="movie__average">{{ movie.vote_average }}</div>
+    <div class="movie__sub-header">
+      <div class="container">
+        <app-movie-average [average]="(movie.vote_average * 10)"></app-movie-average>
         <button class="btn">Reproduzir Trailer</button>
       </div>
     </div>

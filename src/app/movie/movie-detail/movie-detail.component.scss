@@ -1,0 +1,29 @@
+.section-movie-detail {
+	background: #191514;
+	color: #FFF;
+}
+.movie__header {
+	position: relative;
+}
+.movie__cover {
+	border-radius: 5px;
+	width: 92px;
+	margin-top: -70px;
+	box-shadow: 0 -2px 2px 0 black;
+}
+.movie__title {
+	display: inline-block;
+	width: calc(100% - 92px);
+	vertical-align: bottom;
+	font-size: 1.3em;
+	padding-left: 10px;
+	.movie__release {
+		font-size: .8em;
+		font-weight: normal;
+		color: #666;
+		font-style: normal;
+	}
+}
+.movie__sub-header {
+	padding: 15px 0;
+}

@@ -7,7 +7,7 @@ import { LoaderService } from './shared/loader/loader.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  showLoader: boolean;
+  showLoader = true;
 
   constructor(
     private loaderService: LoaderService

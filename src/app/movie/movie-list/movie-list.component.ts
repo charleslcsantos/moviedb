@@ -32,7 +32,7 @@ export class MovieListComponent implements OnInit {
     this.loaderService.showLoader();
     this.movieService.getMovies(filters).subscribe((res) => {
       this.response = res;
-      setTimeout(() => this.loaderService.showLoader(false), 1500);
+      setTimeout(() => this.loaderService.showLoader(false), 2000);
     });
   }
 

@@ -6,7 +6,10 @@
       class="card__pic"/>
   <div class="card__wrapper">
     <div class="card__header">
-        <div class="movie__average">{{ movie.vote_average }}</div>
+        <app-movie-average
+            [average]="(movie.vote_average * 10)"
+            [legend]="false">
+        </app-movie-average>
         <div class="card__title">
           {{ movie.title }}
           <div class="movie__release-date">{{ movie.release_date | amDateFormat:'LL' }}</div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MovieService } from '../shared/movie.service';
+import { LoaderService } from '../../shared/loader/loader.service';
 @Component({
   selector: 'app-movie-detail',
   templateUrl: './movie-detail.component.html',
@@ -11,7 +12,8 @@ export class MovieDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private movieService: MovieService
+    private movieService: MovieService,
+    private loaderService: LoaderService
   ) { }
 
   ngOnInit() {
@@ -24,6 +26,7 @@ export class MovieDetailComponent implements OnInit {
   getMovieDetail(id) {
     this.movieService.getMovieById(id).subscribe((res) => {
       this.movie = res;
+      setTimeout(() => this.loaderService.showLoader(false), 2000);
     });
   }
 

@@ -13,6 +13,7 @@ import { MovieService } from './movie/shared/movie.service';
 import { AuthInterceptor } from './http-interceptors/auth-interceptor';
 import { LoaderComponent } from './shared/loader/loader.component';
 import { MovieCardComponent } from './movie/movie-card/movie-card.component';
+import { MovieAverageComponent } from './movie/movie-average/movie-average.component';
 
 const appRoutes: Routes = [
   { path: '', children: [
@@ -29,7 +30,8 @@ const appRoutes: Routes = [
     LoaderComponent,
     MovieDetailComponent,
     MovieListComponent,
-    MovieCardComponent
+    MovieCardComponent,
+    MovieAverageComponent
   ],
   imports: [
     BrowserModule,
