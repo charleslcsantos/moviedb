@@ -9,6 +9,9 @@ import { LoaderService } from '../../shared/loader/loader.service';
 })
 export class MovieDetailComponent implements OnInit {
   movie;
+  movieCredits;
+  featuredCrew;
+  featuredCast;
 
   constructor(
     private route: ActivatedRoute,
@@ -31,8 +34,10 @@ export class MovieDetailComponent implements OnInit {
   }
 
   getMovieCredits(id) {
-    this.movieService.getMovieById(id).subscribe((res) => {
-      this.movie = res;
+    this.movieService.getMovieCredits(id).subscribe((res) => {
+      this.movieCredits = res;
+      this.featuredCrew = this.movieCredits.crew.slice(0, 5);
+      this.featuredCast = this.movieCredits.cast.slice(0, 8);
     });
   }
 

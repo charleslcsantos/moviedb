@@ -27,6 +27,10 @@ export class MovieService {
     return this.httpClient.get(`/movie/${id}`);
   }
 
+  public getMovieCredits(id) {
+    return this.httpClient.get(`/movie/${id}/credits`);
+  }
+
   public getGenre() {
     return this.httpClient
           .get(`/genre/movie/list`)
